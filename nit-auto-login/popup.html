@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>NIT Auto Login</title>
+  <style>
+    body {
+      font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+      width: 260px;
+      padding: 16px;
+      background: #FAFAFA;
+      color: #333;
+    }
+    h1 {
+      font-size: 15px;
+      color: #055BB5;
+      margin: 0 0 12px 0;
+    }
+    label {
+      font-size: 12px;
+      color: #666;
+      display: block;
+      margin-bottom: 4px;
+      margin-top: 10px;
+    }
+    input[type=text], input[type=password] {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 8px;
+      border: 1px solid #d7dbdd;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+    .row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      font-size: 12px;
+      color: #555;
+    }
+    button {
+      width: 100%;
+      margin-top: 14px;
+      padding: 9px;
+      background: #44ac33;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    button:hover { background: #55bd42; }
+    #status {
+      margin-top: 8px;
+      font-size: 11px;
+      color: #44ac33;
+      min-height: 14px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>NIT Intranet Auto Login</h1>
+
+  <label for="username">Username</label>
+  <input type="text" id="username" autocomplete="off">
+
+  <label for="password">Password</label>
+  <input type="password" id="password" autocomplete="off">
+
+  <div class="row">
+    <input type="checkbox" id="autoSubmit" checked>
+    <label for="autoSubmit" style="margin:0;">Auto-click Sign in</label>
+  </div>
+
+  <button id="saveBtn">Save credentials</button>
+  <div id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

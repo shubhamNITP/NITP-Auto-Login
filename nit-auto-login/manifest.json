@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "NIT Patna Intranet Auto Login",
+  "version": "1.1.0",
+  "description": "Automatically fills and submits your saved credentials on the NIT Patna intranet captive portal login page.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "http://192.168.10.17:8090/*",
+    "https://192.168.10.17:8090/*",
+    "http://194.168.10.17:8090/*",
+    "https://194.168.10.17:8090/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "NIT Auto Login - click to set credentials"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://192.168.10.17:8090/*",
+        "https://192.168.10.17:8090/*",
+        "http://194.168.10.17:8090/*",
+        "https://194.168.10.17:8090/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "http://192.168.10.17:8090/*",
+        "https://192.168.10.17:8090/*",
+        "http://194.168.10.17:8090/*",
+        "https://194.168.10.17:8090/*"
+      ],
+      "js": ["main-world.js"],
+      "run_at": "document_idle",
+      "all_frames": false,
+      "world": "MAIN"
+    }
+  ]
+}
